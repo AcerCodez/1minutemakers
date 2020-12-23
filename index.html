@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1 Minute Makers Payment</title>
+    <script>
+      function clickCounter() {
+        if (typeof Storage !== "undefined") {
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount) + 1;
+          } else {
+            localStorage.clickcount = 1;
+          }
+          document.getElementById("result").innerHTML =
+            "You have increased/decreased 1 Minute Makers Time by " +
+            localStorage.clickcount +
+            " minute(s).";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Sorry, your browser does not support web storage...";
+        }
+      }
+      function clickCounterMinus() {
+        if (typeof Storage !== "undefined") {
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount) - 1;
+          } else {
+            localStorage.clickcount = -1;
+          }
+          document.getElementById("result").innerHTML =
+            "You have increased 1 Minute Makers Time by " +
+            localStorage.clickcount +
+            " minute(s).";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Sorry, your browser does not support web storage...";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p><button onclick="clickCounter()" type="button">+1 Minute</button></p>
+    <div id="result"></div>
+    <p>
+      <button onclick="clickCounterMinus()" type="button">-1 Minute</button>
+    </p>
+    <div id="result"></div>
+    <p>
+      Click the button to [pay 1 Minute to/remove 1 Minute from] 1 Minute Makers
+      / show the counter.
+    </p>
+  </body>
+</html>
